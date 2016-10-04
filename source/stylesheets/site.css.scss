@@ -123,14 +123,22 @@ aside {
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
-  background-color: lighten($neutral_color,30%);
+  color: white;
+  border-width: 0;
+  background-color: transparentize($primary_color,0.2);
+  .navbar-toggle {
+    border-color: white;
+    .icon-bar { background-color: white; }
+  }
 }
-
+.navbar-collapse {
+  border-width: 0;
+}
 .navbar-default .navbar-header .navbar-brand {
   font-family: 'Source Sans Pro', 'Source Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #000;
+  color: white;
   font-size: 70%;
   display: block;
   padding-left: 42px;
@@ -147,17 +155,16 @@ aside {
   font-weight: light;
   font-size: 110%;
   font-weight: 400;
-  color: #222;
+  color: rgba(255,255,255,.8);
 }
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-  color: #f05f40;
+  color: white;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-  color: #f05f40!important;
   background-color: transparent;
 }
 
@@ -188,7 +195,7 @@ aside {
 
   .navbar-default .nav > li>a:hover,
   .navbar-default .nav>li>a:focus:hover {
-    color: $primary_color;
+    color: white;
   }
 
   .navbar-default.affix {
@@ -206,12 +213,12 @@ aside {
 
   .navbar-default.affix .nav > li>a,
   .navbar-default.affix .nav>li>a:focus {
-    color: #222;
+    color: transparentize(white,0.5);
   }
 
   .navbar-default.affix .nav > li>a:hover,
   .navbar-default.affix .nav>li>a:focus:hover {
-    color: #f05f40;
+    color: white;
   }
 }
 
@@ -220,39 +227,38 @@ header {
   width: 100%;
   min-height: auto;
   text-align: center;
-  background-color: $primary_color;
   background-image: linear-gradient(to bottom, #eee, #fff);
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-}
 
-header .header-content {
-  position: relative;
-  width: 100%;
-  padding: 200px 15px;
-  text-align: center;
-}
+ .header-content {
+    position: relative;
+    width: 100%;
+    padding: 200px 15px;
+    text-align: center;
+    background: $primary_color url('/img/tiles.svg') no-repeat top left;
+    .header-content-inner {
+      color: white;
+    }
+    h1 {
+      margin-top: 0;
+      margin-bottom: 1em;
+      font-size: 250%;
+    }
+    h2 {
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+    hr {
+      margin: 30px auto;
+    }
 
-header .header-content {
-  h1 {
-    margin-top: 0;
-    margin-bottom: 1em;
-    font-size: 250%;
-  }
-  h2 {
-    margin-top: 2em;
-    margin-bottom: 1em;
-  }
-  hr {
-    margin: 30px auto;
-  }
-
-  p {
-    margin-bottom: 50px;
-    font-size: 16px;
-    font-weight: 300;
-    color: #000;
+    p {
+      margin-bottom: 50px;
+      font-size: 16px;
+      font-weight: 300;
+    }
   }
 }
 
@@ -272,6 +278,7 @@ pre {
     margin-right: auto;
     margin-left: auto;
     max-width: 1000px;
+    
   }
 
   header .header-content .header-content-inner p {
